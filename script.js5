@@ -1,0 +1,27 @@
+/*
+Escreva um algoritmo que solicite ao usuário a entrada de 5 nomes,
+e que exiba a lista desses nomes na tela. Após exibir essa lista, o
+programa deve mostrar também os nomes na ordem inversa em
+que o usuário os digitou.
+*/
+const nomes = [];
+
+// Solicita ao usuário a entrada de 5 nomes
+for (let i = 0; i < 5; i++) {
+    const nome = prompt(`Digite o ${i + 1}º nome:`);
+    nomes.push(nome);
+}
+
+// Exibe a lista dos nomes na tela
+console.log("Lista dos nomes:");
+
+for (const nome of nomes) {
+    console.log(nome);
+}
+
+// Exibe a lista dos nomes na ordem inversa
+console.log("\nNomes na ordem inversa:");
+
+for (let i = nomes.length - 1; i >= 0; i--) {
+    console.log(nomes[i]);
+}
