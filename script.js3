@@ -1,0 +1,33 @@
+/*
+Desenvolva um algoritmo que preenche um vetor com os 4
+primeiros números perfeitos.
+*/
+function isPerfectNumber(number) {
+    let sum = 1; // Inicia com 1, pois todo número é divisível por 1
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            sum += i;
+            if (i !== number / i) {
+                sum += number / i;
+            }
+        }
+    }
+    return sum === number;
+}
+
+function findPerfectNumbers(count) {
+    const perfectNumbers = [];
+    let currentNumber = 6; // Inicia com o primeiro número perfeito
+    while (perfectNumbers.length < count) {
+        if (isPerfectNumber(currentNumber)) {
+            perfectNumbers.push(currentNumber);
+        }
+        currentNumber++;
+    }
+    return perfectNumbers;
+}
+
+// Preenche um vetor com os 4 primeiros números perfeitos
+const vetorPerfeitos = findPerfectNumbers(4);
+
+console.log(vetorPerfeitos);
